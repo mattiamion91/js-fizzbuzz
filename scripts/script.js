@@ -38,19 +38,36 @@ for (let i = 1; i <= 100; i++) {
 }
 */
 
+//const  appList = document.getElementById('js-fizzbuzz');
+//console.log(appList);
+// ref (node ul) DOM
+
+const output = document.getElementById("js-fizzbuzz");
+let result = "";
+
 for (let i = 1; i <= 100; i++) {//eseguo ciclo che stampi i valori da 1 a 100
 
-    if (i % 3 === 0 && i % 5 === 0) {//impongo che quando la condizione divisibile per 3 e divisibile per 5 sono vere assieme venga stampato FizzBuzz
+    if (i % 3 === 0 && i % 5 === 0) {//impongo che quando la condizione divisibile per 3 e divisibile per 5 sono vere assieme venga stampato FizzBuzz 
         console.log("FizzBuzz");
+        result += `<li>FizzBuzz</li>`;
 
     } else if (i % 3 === 0) {//impongo che SOLO quando la condizione divisibile per 3 é vera sia stampato Fizz 
         console.log("Fizz");
+        result += `<li>Fizz</li>`;
 
     } else if (i % 5 === 0) {//impongo che SOLO quando la condizione divisibile per 5 é vera sia stampato Buzz
         console.log("Buzz");
+        result += `<li>Buzz</li>`;
 
-    } else console.log(i)//quando nessuna delle precedenti condizioni é vera viene stampato il valore indice
+    } else {
+        console.log(i)//quando nessuna delle precedenti condizioni é vera viene stampato il valore indice
+        result += `<li>${i}</li>`;
+    }       
 }
+
+output.innerHTML = result;
+
+
 
 
 
